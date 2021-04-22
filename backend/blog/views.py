@@ -5,7 +5,7 @@ from rest_framework.generics import ListAPIView, RetrieveAPIView
 from blog.models import BlogPost, Comment
 from blog.serializers import BlogPostSerializer, CommentSerializer
 
-# BlogPost Serializers
+# BlogPost
 
 class BlogPostListView(ListAPIView):
     queryset = BlogPost.objects.order_by('-date_created')
@@ -37,7 +37,7 @@ class BlogPostCategoryView(APIView):
 
         return Response(serializer.data)
 
-# Comment Serializers
+# Comment
 
 class CommentListView(ListAPIView):
     queryset = Comment.objects.order_by('-date_created')

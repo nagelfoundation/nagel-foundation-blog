@@ -10,8 +10,6 @@ class BlogPostAdmin(SummernoteModelAdmin):
     list_per_page = 25
     summernote_fields = ('content', )
 
-class CommentAdmin(SummernoteModelAdmin):
-    summernote_fields = ('content',)
 
 admin.site.register(BlogPost, BlogPostAdmin)
-admin.site.register(Comment, CommentAdmin)
+admin.site.register(Comment)
