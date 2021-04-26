@@ -8,6 +8,5 @@ urlpatterns = [
     path('<slug>', BlogPostDetailView.as_view()),
     path('<slug>/comments', CommentListView.as_view()),
     path('<slug>/comments/<int:pk>', CommentDetailView.as_view()),
-    path('<slug>/comments/<int:pk>', CommentDetailView.as_view()),
-    
+    path('<slug>/comments/<int:pk>', CommentDetailView.as_view()),    
 ]

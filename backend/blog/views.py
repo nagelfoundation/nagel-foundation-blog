@@ -40,13 +40,13 @@ class BlogPostCategoryView(APIView):
 # Comment
 
 class CommentListView(ListAPIView):
-    queryset = Comment.objects.order_by('-date_created')
+    queryset = Comment.objects.order_by('id')
     serializer_class = CommentSerializer
     lookup_field = 'blog_post'
     permission_classes = (permissions.AllowAny,)
 
 class CommentDetailView(RetrieveAPIView):
-    queryset = Comment.objects.order_by('-date_created')
+    queryset = Comment.objects.order_by('id')
     serializer_class = CommentSerializer
     lookup_field = 'pk'
     permission_classes = (permissions.AllowAny,)

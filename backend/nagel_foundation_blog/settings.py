@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+# from corsheaders.defaults import default_headers
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -145,4 +146,14 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 SUMMERNOTE_THEME = 'bs4'
 
-CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ORIGIN_WHITELIST = [
+    'http://google.com',
+    'http://127.0.0.1:8000',
+    'http://localhost:3000',
+    'http://127.0.0.1:3000'
+]
+
+# CORS_ALLOW_HEADERS = default_headers + ('cache-control', 'origin')
+
+CORS_ORIGIN_ALLOW_ALL = True # Fix this later to make secure

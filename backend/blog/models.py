@@ -53,7 +53,6 @@ class Comment(models.Model):
     month = models.CharField(max_length=3)
     day = models.CharField(max_length=2)
     content = models.TextField()
-    date_created = models.DateTimeField(default=datetime.now, blank=True)
-
+    
     def __str__(self):
         return self.title
