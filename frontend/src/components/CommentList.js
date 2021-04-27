@@ -36,7 +36,7 @@ const CommentList = () => {
       });
   };
   const handleUpdateClick = (id) => {
-    history.push(`/comment/${id}/update/`);
+    history.push(`/comments/${id}/update/`);
   };
   return (
     <div className="row justify-content-center">

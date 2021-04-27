@@ -17,7 +17,7 @@ const Login = ({isLoggedIn, handleLogout, handleLogin}) => {
       <form onSubmit={handleLogin}>
         <input className="form-control" type='text' placeholder='username' name='username' />
         <input className="form-control" type='password' name='password' />
-        <button className="btn btn-primary btn-md" type='submit' >Submit</button>
+        <button className="btn btn-primary btn-md" type='submit' >Login</button>
       </form>
     </div>
     

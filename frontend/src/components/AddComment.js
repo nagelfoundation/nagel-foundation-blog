@@ -4,7 +4,7 @@ import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
 
 
 const addComment = (commentObject) => {
-  return fetch(`${process.env.REACT_APP_API_URL}api/comment/`, {
+  return fetch(`${process.env.REACT_APP_API_URL}api/comments/`, {
     headers: {
       'Content-Type': 'application/json'
     },
@@ -38,7 +38,7 @@ function AddComment() {
   };
 
   return redirect ? <Redirect to='/' /> : (
-    <div style={{ padding: '20px' }}>
+    <div className="container" style={{ padding: '20px' }}>
       <h3> Add a Comment </h3>
       <Form onSubmit={handleFormSubmit}>
         <FormGroup>
@@ -69,7 +69,7 @@ function AddComment() {
             <option>3</option>
           </Input>
         </FormGroup>
-        <Button className="mt-3">Submit</Button>
+        <Button className="mt-3">Add</Button>
       </Form>
     </div>
   )

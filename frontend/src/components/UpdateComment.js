@@ -2,18 +2,17 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
 
-
-const addComment = (commentObject) => {
-  return fetch(`${process.env.REACT_APP_API_URL}api/comment/`, {
+const updateComment = (commentObject) => {
+  return fetch(`${process.env.REACT_APP_API_URL}api/comment/10/`, {
     headers: {
       'Content-Type': 'application/json'
     },
-    method: "POST",
+    method: "PUT",
     body: JSON.stringify(commentObject)
   });
 };
 
-function AddComment() {
+function UpdateComment() {
   const [ redirect, setRedirect ] = React.useState(false);
 
   const handleFormSubmit = async (event) => {
@@ -28,8 +27,9 @@ function AddComment() {
     }
 
     try {
-      const response = await addComment(commentObject);
-      if (response.status === 201) {
+      const response = await updateComment(commentObject);
+      console.log(response)
+      if (response.status === 201 || 200) {
         setRedirect(true);
       }
     } catch (err) {
@@ -37,9 +37,9 @@ function AddComment() {
     }
   };
 
-  return redirect ? <Redirect to='/' /> : (
-    <div style={{ padding: '20px' }}>
-      <h3> Add a Comment </h3>
+  return redirect ? <Redirect to='/blog/1/comments' /> : (
+    <div className="container" style={{ padding: '20px' }}>
+      <h3> Update a Comment </h3>
       <Form onSubmit={handleFormSubmit}>
         <FormGroup>
           <Label for="title">Title</Label>
@@ -71,10 +71,10 @@ function AddComment() {
             <option>5</option>
           </Input>
         </FormGroup>
-        <Button className="mt-3">Submit</Button>
+        <Button className="mt-3">Update</Button>
       </Form>
     </div>
   )
 };
 
-export default AddComment;
+export default UpdateComment;
