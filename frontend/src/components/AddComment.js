@@ -4,7 +4,7 @@ import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
 
 
 const addComment = (commentObject) => {
-  return fetch(`${process.env.REACT_APP_API_URL}api/comments/`, {
+  return fetch(`${process.env.REACT_APP_API_URL}api/comment/`, {
     headers: {
       'Content-Type': 'application/json'
     },
@@ -37,7 +37,7 @@ function AddComment() {
     }
   };
 
-  return redirect ? <Redirect to='/' /> : (
+  return redirect ? <Redirect to='/blog/1/comments' /> : (
     <div className="container" style={{ padding: '20px' }}>
       <h3> Add a Comment </h3>
       <Form onSubmit={handleFormSubmit}>

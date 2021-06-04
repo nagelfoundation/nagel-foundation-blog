@@ -17,7 +17,7 @@ const HomePage = ({ isLoggedIn, user, handleLogout }) => {
       {
         !isLoggedIn
         ?
-        <div className="container">
+        <div className="container mt-5">
           <div>
             <div className="p-4 p-md-5 mb-4 text-white rounded bg-dark text-center">
               <h1 className="display-4">Let's Talk!</h1>
